@@ -1,0 +1,54 @@
+
+
+ext='PN5LN3'
+python ~/scripts/network_create_13Aug/generate_ssets_custom_lower.py ~/work/AL_90_30/noPN-PN/ssets_AL120_${g}.isf 2 90,30 0,0.5,0.5,0.5 ${gval}
+time ~/work/AL_90_30/insilico_PN90_LN30_noise_noPN-PN_${t}.out -o ~/work/AL_90_30/PN90_LN30_${t}_${g}_${ext}.csv -n ~/work/AL_90_30/nsets/${t}/nsets_AL120_${ext}_${t}_base0-01.isf -s ~/work/AL_90_30/noPN-PN/ssets_AL120_${g}.isf > ~/work/AL_90_30/PN90_LN30.log
+mkdir ~/work/AL_90_30/results/oscillations/${g}_${ext}/
+cp ~/work/AL_90_30/PN90_LN30_${t}_${g}_${ext}.csv ~/work/AL_90_30/results/oscillations/${g}_${ext}/
+~/scripts/run_plots.sh ${g} ${ext}
+
+
+
+g='g0-15LN0-55LNPN0-02PNLN0-175PN'
+gval='0.175,0.02,0.55,0.15'
+ext='PN5LN5'
+python ~/scripts/network_create_13Aug/generate_ssets_custom_lower.py ~/work/AL_90_30/noPN-PN/ssets_AL120_${g}.isf 2 90,30 0,0.5,0.5,0.5 ${gval}
+time ~/work/AL_90_30/insilico_PN90_LN30_noise_noPN-PN_${t}.out -o ~/work/AL_90_30/PN90_LN30_${t}_${g}_${ext}.csv -n ~/work/AL_90_30/nsets/${t}/nsets_AL120_${ext}_${t}_base0-1.isf -s ~/work/AL_90_30/noPN-PN/ssets_AL120_${g}.isf > ~/work/AL_90_30/PN90_LN30.log
+mkdir ~/work/AL_90_30/results/oscillations/${g}_${ext}/
+cp ~/work/AL_90_30/PN90_LN30_${t}_${g}_${ext}.csv ~/work/AL_90_30/results/oscillations/${g}_${ext}/
+~/scripts/run_plots.sh ${g} ${ext}
+
+g='g0-15LN0-55LNPN0-02PNLN0-175PN'
+gval='0.175,0.02,0.55,0.15'
+ext='PN5LN3'
+python ~/scripts/network_create_13Aug/generate_ssets_custom_lower.py ~/work/AL_90_30/noPN-PN/ssets_AL120_${g}.isf 2 90,30 0,0.5,0.5,0.5 ${gval}
+time ~/work/AL_90_30/insilico_PN90_LN30_noise_noPN-PN_${t}.out -o ~/work/AL_90_30/PN90_LN30_${t}_${g}_${ext}.csv -n ~/work/AL_90_30/nsets/${t}/nsets_AL120_${ext}_${t}_base0-1.isf -s ~/work/AL_90_30/noPN-PN/ssets_AL120_${g}.isf > ~/work/AL_90_30/PN90_LN30.log
+mkdir ~/work/AL_90_30/results/oscillations/${g}_${ext}/
+cp ~/work/AL_90_30/PN90_LN30_${t}_${g}_${ext}.csv ~/work/AL_90_30/results/oscillations/${g}_${ext}/
+~/scripts/run_plots.sh ${g} ${ext}
+
+
+g='g0-15LN0-55LNPN0-04PNLN0-175PN'
+gval='0.175,0.04,0.55,0.15'
+
+
+ext='PN5LN3'
+python ~/scripts/network_create_13Aug/generate_ssets_custom_lower.py ~/work/AL_90_30/noPN-PN/ssets_AL120_${g}.isf 2 90,30 0,0.5,0.5,0.5 ${gval}
+time ~/work/AL_90_30/insilico_PN90_LN30_noise_noPN-PN_${t}.out -o ~/work/AL_90_30/PN90_LN30_${t}_${g}_${ext}.csv -n ~/work/AL_90_30/nsets/${t}/nsets_AL120_${ext}_${t}_base0-01.isf -s ~/work/AL_90_30/noPN-PN/ssets_AL120_${g}.isf > ~/work/AL_90_30/PN90_LN30.log
+mkdir ~/work/AL_90_30/results/oscillations/${g}_${ext}/
+cp ~/work/AL_90_30/PN90_LN30_${t}_${g}_${ext}.csv ~/work/AL_90_30/results/oscillations/${g}_${ext}/
+~/scripts/run_plots.sh ${g} ${ext}
+
+mv ~/work/AL_90_30/results/oscillations/${g}_${ext}/ ~/work/AL_90_30/results/oscillations/${g}_${ext}_base0-01/
+
+for in 'PN5LN3' 'PN5LN5'
+	do
+	python ~/scripts/network_create_13Aug/generate_ssets_custom_lower.py ~/work/AL_90_30/noPN-PN/ssets_AL120_${g}.isf 2 90,30 0,0.5,0.5,0.5 ${gval}
+	time ~/work/AL_90_30/insilico_PN90_LN30_noise_noPN-PN_${t}.out -o ~/work/AL_90_30/PN90_LN30_${t}_${g}_${ext}.csv -n ~/work/AL_90_30/nsets/${t}/nsets_AL120_${ext}_${t}_basePN0-01LN0-001.isf -s ~/work/AL_90_30/noPN-PN/ssets_AL120_${g}.isf > ~/work/AL_90_30/PN90_LN30.log
+	mkdir ~/work/AL_90_30/results/oscillations/${g}_${ext}/
+	cp ~/work/AL_90_30/PN90_LN30_${t}_${g}_${ext}.csv ~/work/AL_90_30/results/oscillations/${g}_${ext}/
+	~/scripts/run_plots.sh ${g} ${ext}
+	mv ~/work/AL_90_30/results/oscillations/${g}_${ext}/ ~/work/AL_90_30/results/oscillations/${g}_${ext}_basePN0-01LN0-001/
+	done
+
+
